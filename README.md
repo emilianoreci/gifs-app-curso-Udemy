@@ -62,7 +62,5 @@ quita caracteres especiales para insertar en una url.
  ***************/
  animated css usado por cdn
 
- api key:
- DDHuVVy4Vd8FgtogWGafHmiYTZvxdVqM
 
 video 77
