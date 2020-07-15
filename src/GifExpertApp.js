@@ -5,8 +5,10 @@ import React, { useState } from "react";
 import { AddCategories } from "./componets/AddCategories";
 import { GifGrid } from "./componets/GifGrid";
 
-const GifExpertApp = () => {
-  const [categories, setCategories] = useState(["goku"]);
+const GifExpertApp = ({ defaultCategory = [] }) => {
+  //const [categories, setCategories] = useState(["goku"]);
+  //En vez de poner directamente goku en el useState, lo paso por propsDefault
+  const [categories, setCategories] = useState(defaultCategory);
 
   return (
     <>

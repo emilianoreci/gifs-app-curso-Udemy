@@ -1,12 +1,12 @@
 map is not a function !!
 revizar que el nuevo state sea un array
 
-const [categories, setcategories] = useState(["goku", "dragk", "gay"]);
+const [categories, setCategories] = useState(["goku", "dragk", "gay"]);
 
   const handleAdd = () => {
-      //notese que se ponen los corchetes.
+      //notese que se ponen los corchetes en el setCategories.
       //** El boludo se los comio **
-    setcategories([...categories, "dd"]);
+    setCategories([...categories, "dd"]);
     Es lo mismo pero no necesito pasarle la props categories    
     setCategories((cate) => [...cate, inputValue]);
 
@@ -33,10 +33,14 @@ BIEN:
 /************************
  * DESTRUCTURING EN MAP *
  ************************/
+SIN DESTRUCTURING:
+  {
+    images.map((each) => (<li key={each.id}>{each.title}</li>))
+  }
 
-  {images.map(({ id, title }) => (
-          <li key={id}>{title}</li>
-        ))
+CON DESTRUCTURING:
+  {
+    images.map(({ id, title }) => (<li key={id}>{title}</li>))
   }
 
 /**************************************
@@ -48,12 +52,12 @@ Gracias al rest, permite que le pase cada una de las propiedades como valores in
   { images.map((eachElement) => (
             <GifGridItem key={eachElement.id} {...eachElement}></GifGridItem>
               //En vez de usar directamente los props.
-              //<GifGridItem key={eachElement.id} img={eachElement}></GifGridItem> 
+              //<GifGridItem key={eachElement.id} img={eachElement.img}></GifGridItem> 
           ))
   }
 
 
-#Encodeuri()
+#EncodeURI()
 quita caracteres especiales para insertar en una url.
 
 
@@ -63,4 +67,28 @@ quita caracteres especiales para insertar en una url.
  animated css usado por cdn
 
 
-video 77
+/********
+ * TEST *
+ ********/
+
+/************************************************************
+ * ACCEDER A ATRIBUTO DE UNA ETIQUETA HTML EN FORMATO STRING *
+ ************************************************************/
+  const img = wrapper.find("img");
+    console.log(img.html());
+    //<img src="https://localhost/algo" alt="La musica de hoy"/>
+
+Y EN FORMATO OBJETO:
+  const img = wrapper.find("img");
+    console.log(img.props());
+    // {src="https://localhost/algo" alt="La musica de hoy"}
+
+     console.log(img.props().src);
+    // src="https://localhost/algo" 
+
+
+/****************************************************************************************
+ * AL DIA DE LA FECHA NO HAY UNA FORMA DE TESTEAR LOS USESTATE, YA QUE NO TIENEN UN ID. *
+ ****************************************************************************************/
+
+video 99

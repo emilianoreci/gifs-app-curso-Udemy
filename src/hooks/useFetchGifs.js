@@ -1,4 +1,7 @@
+//  @Package
 import { useState, useEffect } from "react";
+
+//  @Own
 import { getGifs } from "../helpers/getGifs";
 
 export const useFetchGifs = (category) => {
